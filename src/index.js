@@ -1,10 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'
+import ReactDOM from 'react-dom'
+//Components
+import Header from './components/header'
 
-//first component. keep it simple
-const App = () => {
-    //it's not HTML, it's JSX
-    return <h1>Hello, Universe</h1>
+const App = () => {   
+    return (
+        <div>
+            <Header /> {/* using Header component */}
+        </div>
+    )
 }
 
-ReactDOM.render(<App />, document.getElementById( 'root' ) );
+ReactDOM.render(<App />, document.getElementById( 'root' ) )

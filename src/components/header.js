@@ -1,28 +1,27 @@
-import React, { Component } from 'react';   /* ES6 Destructuring */
+import React from 'react';
 
-//Events. React's Synthetic Events. Class base component use case
+//Events. React's Synthetic Events. Functional component use case
 //more info: https://reactjs.org/docs/events.html
 
-class Header extends Component {
+const Header = () => {
 
-    inputClickHandler() {
+    function inputClickHandler(event) {
+        event.preventDefault();
         alert('Hello Universe');
     }
 
-    onChangeHandler= (event) => {
+    function onChangeHandler(event) {
         console.log(event.target.value);
     }
 
-    render() {
-        return (
-            <header>
-                <h1>Logo</h1>
-                <button onClick = {this.inputClickHandler}>Greeting</button> <br /><br />
+    return (
+        <header>
+            <h1>Logo</h1>
+            <button onClick = {inputClickHandler}>Greeting</button> <br /><br />
 
-                <input onChange = {this.onChangeHandler} type="text" />
-            </header>
-        )
-    }
+            <input onChange = {onChangeHandler} type="text" />
+        </header>
+    );
 }
 
 //available for other components

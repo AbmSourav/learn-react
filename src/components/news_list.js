@@ -18,7 +18,7 @@ const NewsList = ( props ) => {
 
     return(
         <div>
-            <h1>News List</h1>
+            <h1 className="heading">News List</h1>
             {items}
         </div>
     )

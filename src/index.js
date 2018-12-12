@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
+import '../src/css/style.css'
 
 import JSON from './db.json' /* featching json file */
 
@@ -15,7 +16,7 @@ class App extends Component {
     render() {
         return (
             /* pasing data to the NewsList component through props(news) */
-            <div>
+            <div className="container">
                 <NewsList news = { this.state.news } />
             </div>
         )   

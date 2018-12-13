@@ -1,5 +1,10 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Dependency
+
+### `npm install react-router-dom`
+It's going to install React Router. It will be added in package.json dependencies.
+
 ## Available Scripts
 
 In the project directory, you can run:

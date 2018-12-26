@@ -1,23 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Route, Link, NavLink } from 'react-router-dom'
+import { BrowserRouter, Route, NavLink, Switch } from 'react-router-dom'
 
 // components
 import Home from './components/home'
 import Posts from './components/posts'
 import PostItem from './components/post_item'
 import Profile from './components/profiles'
+import Life from './components/life'
 
 const App = () => {
     return (
-        /* we also can use HashRouter or MemoryRouter */
         <BrowserRouter>
             <div>
                 <header>
-                    {/* <Link> works as a <a href=""> */}
-                    <Link to={{ pathname: '/' }}>Home</Link><br />
+                    <NavLink to={{ pathname: '/' }}>Home</NavLink><br />
 
-                    {/* insted of Link we also can use NavLink */}
                     <NavLink 
                         to={{ pathname: '/posts' }}
                         activeStyle={{color: 'red', fontSize: '25px'}}
@@ -25,15 +23,20 @@ const App = () => {
                     Post
                     </NavLink><br />
 
-                    <Link to={{pathname: '/profiles'}}>Profile</Link>
+                    <NavLink to={{pathname: '/profiles'}}>Profile</NavLink><br />
+
+                    <NavLink to={{pathname: '/life'}}>Life Cycle</NavLink>
                     <hr />
                 </header>
 
-                <Route path="/" exact component={Home} />
-                <Route path="/posts" exact component={Posts} />
-                {/* it's saying that, go to the PostItem component through Posts component */}
-                <Route path="/posts/:title1" component={PostItem} />{/* insted of hard coding make it dynamic with ':' */}
-                <Route path="/profiles" component={Profile} />
+                <Switch>
+                    <Route path="/posts/:title1" component={PostItem} />
+                    <Route path="/profiles" component={Profile} />
+                    <Route path="/life" component={Life} />
+                    <Route path="/posts" component={Posts} />
+                    <Route path="/" component={Home} />
+                </Switch>
+                
                 
             </div>
         </BrowserRouter>
